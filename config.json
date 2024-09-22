@@ -1,24 +1,61 @@
 {
-	"pools":[
-	{
-		"name": "pool.verus.io",
-        "url": "stratum+tcp://pool.verus.io:9998",
-		"timeout": 150,
-		"disabled": 0
-	},
-	{
-		"name": "verus.farm (Quipacorn)",
-        "url": "stratum+tcp://verus.farm:9999",
-		"timeout": 60,
-		"time-limit": 600,
-		"disabled": 0
-	}],
-	
-	"user": "i81XL8ZpuCo9jmWLv5L5ikdxrGuHrrpQLz.Donator##",
-	"algo": "verus",
-	"threads": 8,
-	"cpu-priority": 1,
-	"retry-pause": 5,
-	"api-allow": "192.168.0.0/16",
-	"api-bind": "0.0.0.0:4068"
+    "pools":
+        [{
+            "name": "USSE-VIPOR",
+            "url": "stratum+tcp://usse.vipor.net:5040",
+            "timeout": 180,
+            "disabled": 0
+        },
+        {
+            "name": "USSW-VIPOR",
+            "url": "stratum+tcp://ussw.vipor.net:5040",
+            "timeout": 180,
+            "disabled": 0
+        },
+        {
+            "name": "US-VIPOR",
+            "url": "stratum+tcp://us.vipor.net:5040",
+            "timeout": 180,
+            "disabled": 0
+        },
+        {
+            "name": "NA-LUCKPOOL",
+            "url": "stratum+tcp://na.luckpool.net:3960",
+            "timeout": 180,
+            "disabled": 1
+        },
+        {
+            "name": "AIH-LOW",
+            "url": "stratum+tcp://verus.aninterestinghole.xyz:9998",
+            "timeout": 180,
+            "disabled": 1
+        },
+        {
+            "name": "WW-ZERGPOOL",
+            "url": "stratum+tcp://verushash.mine.zergpool.com:3300",
+            "timeout": 180,
+            "disabled": 1
+        },
+        {
+            "name": "VPOOL-LOW",
+            "url": "stratum+tcp://pool.verus.io:9998",
+            "timeout": 180,
+            "disabled": 1
+        },
+        {
+            "name": "US-CLOUDIKO",
+            "url": "stratum+tcp://us.cloudiko.io:9999",
+            "timeout": 180,
+            "disabled": 1
+        }],
+
+    "user": "RYXisBbBHZrCKAVKafuqoBmGYgDjNLBdje.MINEROX13",
+    "pass": "",
+    "algo": "verus",
+    "threads": 8,
+    "cpu-priority": 1,
+    "cpu-affinity": -1,
+    "retry-pause": 10,
+    "api-allow": "192.168.0.0/16",
+    "api-bind": "0.0.0.0:4068"
 }
