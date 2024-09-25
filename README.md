@@ -1,75 +1,77 @@
 # Android-Mining
-Quick installation of mining on Android Phones
+Instalación rápida de minería en teléfonos Android
 
-## Github cloning and customizing
-1. clone this repo to your own github account.
-2. change the URL on line 35 of the README.md to reflect your own account.
-3. replace `QR/install.png` with your own.
-4. **Important**: change the SSH key on line 13 of `install.sh` to reflect your own SSH key.
-5. change lines 50 to reflect your own github link.
-6. adjust the `config.json` to your address and mining details.
-7. optional: change line 20 of your `config.json` to your own LAN IP range.
-8. optional: change line 21 of your `config.json` to the LAN IP your phone uses.
+## Clonación y personalización de Github
+1. clona este repositorio en tu propia cuenta de github.
+2. cambia la URL en la línea 35 del README.md para reflejar tu propia cuenta.
+3. Sustituye `QR/install.png` por el tuyo.
+4. **Importante**: cambia la clave SSH en la línea 13 de `install.sh` para reflejar tu propia clave SSH.
+5. cambiar las líneas 50 para reflejar su propio enlace github.
+6. ajusta el `config.json` a tu dirección y detalles de minería.
+7. opcional: cambiar la línea 20 de su `config.json` a su propio rango de IP de LAN.
+8. opcional: cambia la línea 21 de tu `config.json` a la IP LAN que usa tu teléfono.
 
-## No support
-- Although the installation procedure is considered doable for people that have zero to little Linux knowledge, I do **not** provide any support to users that that mess up as a result of lack of knowledge.
-- Reading is an dying art. There's no instruction video for people that can't follow instructions step-by-step.
+## Sin soporte
+- Aunque el procedimiento de instalación se considera factible para la gente que tiene cero o poco conocimiento de Linux, yo **no** proporciono ningún soporte a los usuarios que lo estropean como resultado de la falta de conocimiento.
+- Leer es un arte en extinción. No hay video de instrucciones para personas que no pueden seguir las instrucciones paso a paso.
 
-## Prerequisites
-- Some fundamental Linux knowledge is *required*. (do an online coarse!)
-- Knowledge about how to operate Linux *screen* is a must.
-- Knowledge on *ssh* and *scp* is highly recommended.
-- Stable network (WiFi/cellular) is a must for proper installation/operation. Be prepared to troubleshoot and fix them yourself.
+## Prerrequisitos
+- Algún conocimiento fundamental de Linux es *requerido*. (¡haz una basta online!)
+- El conocimiento sobre cómo para operar Linux *screen* es un deber.
+- El conocimiento en *ssh* y *scp* es altamente recomendado.
+- Red estable (WiFi/cellular) es un deber para instalación/operación apropiada. Esté preparado para solucionar problemas y arreglarlos usted mismo.
 
-## Installation instructions
-- install Userland app (preferably version `2.8.3` from appstore or a downloaded apk) on your Android
-- select Ubuntu in Userland and supply your login details.
-- choose SSH
-- wait for it to install, enter Ubuntu and log into your account
+## Instrucciones de instalación
+- instala la aplicación Userland (preferiblemente la versión `2.8.3` de appstore o un apk descargado) en tu Android
+- selecciona Ubuntu en Userland y proporciona tus datos de acceso.
+- elige SSH
+- espera a que se instale, entra en Ubuntu e inicia sesión en tu cuenta
 ```bash
 lscpu
 ```
-If the output doesn't show `Architecture: aarch64` or `CPU op-mode(s): 32-bit, 64-bit`, then do not bother to continue. Your phone is not running a 64-bit OS.
+Si la salida no muestra `Architecture: aarch64` o `CPU op-mode(s): 32-bit, 64-bit`, entonces no te molestes en continuar. Su teléfono no está ejecutando un sistema operativo de 64 bits.
 
-```bash
+``bash
 curl -o- -k https://raw.githubusercontent.com/LordDarkManX/Android-Mining/main/install.sh | bash
 ```
-For easy access on phones:
+Para facilitar el acceso en los teléfonos:
 ![install.sh](QR/install.png)
 
-Now adjust pools, mineraddress+workername, and network settings for the API.
-exit with `<CTRL>-X` followed by `y` and an `<ENTER>`
+Ahora ajusta los pools, mineraddress+workername y la configuración de red para la API.
+Sal con `<CTRL>-X` seguido de `y` y un `<ENTER>`.
 ```bash
 nano config.json
 ```
 
-## Usage:
-start mining with `~/ccminer/start.sh`
+## Uso:
+iniciar la minería con `~/ccminer/start.sh`
 
-Standard SSH port for Userland is port `2022`.
-Optional: create an entry in your SSH config file for each phone:
+El puerto SSH estándar para Userland es el puerto `2022`.
+Opcional: cree una entrada en su archivo de configuración SSH para cada teléfono:
 ```
 Host Pixel2XL01
-    Hostname 192.168.25.81
-    Port 2022
-    User Pixel2XL01
+    Nombre de host 192.168.25.81
+    Puerto 2022
+    Usuario Pixel2XL01
     IdentityFile ~\.ssh\id-rsa_oink-private
 ```
 
-Starting the miner:
+Iniciando el minero:
 `~/ccminer/start.sh`
 
-Monitoring the miner:
+Monitorización del minero:
 - `screen -x CCminer`
-- exit with `CTRL-a` key combination followed by `d`.
+- Salir con la combinación de teclas `CTRL-a` seguida de `d`.
 
-Terminating the miner:
-`screen -X -S CCminer quit`
+Finalizar el minero:
+`screen -X -S CCminer quit`.
 
-## Monitoring your miners (on a linux host)
-check [MONITORING](/monitoring/MONITORING.md).
+## Monitorizando tus mineros (en un host linux)
+compruebe [MONITORING](/monitoring/MONITORING.md).
 
-WARNING: The scripts installs my own public SSH key. You may want to remove that from your `~/.ssh/authorized_keys` file and replace it with your own for passwordless access.
+ADVERTENCIA: Los scripts instalan mi propia clave pública SSH. Puede que quieras quitarla de tu archivo `~/.ssh/authorized_keys` y reemplazarla con la tuya para un acceso sin contraseña.
 
-### I accept no warranties or liabilities on this repo. It is supplied as a service.
-### Use at your own risk!!!
+### No acepto garantías ni responsabilidades sobre este repositorio. Se suministra como un servicio.
+### ¡¡¡Utilícelo bajo su propio riesgo!!!
+
+Traducción realizada con la versión gratuita del traductor DeepL.com
